@@ -1,0 +1,52 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Personal data: every brand, project, footage and local state stays on this machine
+brands/*
+!brands/README.md
+video-projects/*
+!video-projects/README.md
+inbox/*
+!inbox/README.md
+.factory/
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Build and media output
+node_modules/
+renders/
+**/renders/
+qa/
+tmp/
+archives/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.m4v
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.aiff
+*.zip
+*.log
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+__pycache__/
+*.pyc
+
+# Sound effects are rebuilt with scripts/sfx/install.mjs (Mixkit files cannot be redistributed)
+sfx-library/*/
+sfx-library/manifest.json
+
+# Generated thumbnails (personal output)
+public/thumbs/

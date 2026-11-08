@@ -1,0 +1,35 @@
+{
+  "name": "video-factory",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Brand-aware AI video editing studio for Claude Code: onboard a brand once, then turn raw footage into finished, on-brand videos with HyperFrames.",
+  "scripts": {
+    "setup": "npm install && npx hyperframes browser ensure && npx hyperframes skills update talking-head-recut embedded-captions general-video motion-graphics && node scripts/factory.mjs doctor",
+    "doctor": "node scripts/factory.mjs doctor",
+    "onboard": "node scripts/onboarding/start.mjs",
+    "context": "node scripts/factory.mjs context",
+    "brand": "node scripts/factory.mjs brand",
+    "learn": "node scripts/factory.mjs learn",
+    "feedback": "node scripts/factory.mjs feedback",
+    "new-video": "node scripts/factory.mjs new-video",
+    "transcribe": "node scripts/transcribe.mjs",
+    "verify": "node scripts/verify-render.mjs",
+    "preflight": "node scripts/preflight.mjs",
+    "preflight:all": "node scripts/preflight-all.mjs",
+    "validate-beats": "node scripts/validate-beat-sync.mjs",
+    "validate:short-form": "node .claude/skills/short-form-edit/scripts/validate-plan.mjs",
+    "validate:footage": "node .claude/skills/short-form-edit/scripts/validate-footage.mjs",
+    "catalog": "node scripts/style-library/build-registry.mjs",
+    "skills:update": "npx hyperframes skills update talking-head-recut embedded-captions general-video motion-graphics",
+    "check": "node scripts/check-kit.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:media": "node scripts/smoke-media.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "gsap": "3.15.0",
+    "hyperframes": "0.8.79"
+  }
+}

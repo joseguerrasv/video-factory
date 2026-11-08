@@ -1,0 +1,33 @@
+{
+  "model": "claude-opus-5-5",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.mjs\" 1" },
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.mjs\" 2" },
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.mjs\" 3" },
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.mjs\" 4" },
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/scripts/hooks/session-start.mjs\" 5" }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/scripts/hooks/prompt-feedback.mjs\"", "timeout": 10 }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/*)",
+      "Bash(node ../../scripts/*)",
+      "Bash(npx hyperframes *)",
+      "Bash(npm run *)",
+      "Bash(ffprobe *)"
+    ]
+  }
+}
